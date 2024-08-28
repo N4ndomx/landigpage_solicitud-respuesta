@@ -1,0 +1,348 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* Body */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  line-height: 1.6;
+}
+
+/* Barra de Navegación */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estado inicial transparente */
+.header-transparent {
+  background-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Estado después del scroll */
+.header-solid {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Suaviza la transición del color */
+}
+
+/* Logo para estado transparente */
+.header-transparent .logo {
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Logo para estado sólido */
+.header-solid .logo {
+  color: #ff5c00;
+}
+
+/* Estilo de los enlaces de navegación */
+nav a {
+  color: inherit; /* Hereda el color según el estado del header */
+  margin-left: 20px;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.header-transparent nav a {
+  color: #ffffff; /* Texto blanco para estado transparente */
+}
+
+.header-solid nav a {
+  color: #ff5c00; /* Texto naranja para estado sólido */
+}
+
+nav a:hover {
+  color: #24c56c;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  text-align: center;
+  height: 100vh; /* Hace que la sección ocupe toda la altura de la ventana */
+  overflow: hidden; /* Oculta cualquier contenido desbordado */
+}
+
+.hero-title {
+  color: #ffffff;
+  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+  font-size: 2em;
+  position: absolute;
+  z-index: 2; /* Asegura que el título esté por encima del video */
+}
+
+.hero video {
+  width: 100%;
+  height: 100vh; /* Hace que el video ocupe toda la altura de la ventana */
+  object-fit: cover; /* Asegura que el video cubra completamente el contenedor */
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero button {
+  background-color: #ffffff;
+  color: #ff5c00;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+  background-color: #24c56c;
+  color: #ffffff;
+}
+
+/* Section Styles */
+section {
+  padding: 60px 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.text-content h2 {
+  color: #ff5c00;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.text-content p {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.text-content button {
+  background-color: #ff5c00;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.text-content button:hover {
+  background-color: #24c56c;
+}
+
+/* Card */
+#caracteristicas {
+  background-color: #f0f4f8;
+  padding: 60px 20px; /* Espaciado alrededor de la sección */
+  text-align: center;
+}
+
+#caracteristicas h2 {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+#aplicaciones {
+  background-color: #f0f4f8;
+  padding: 60px 20px; /* Espaciado uniforme alrededor de la sección */
+  text-align: center;
+}
+
+#aplicaciones h2 {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Diseño responsivo */
+  gap: 30px; /* Espaciado entre cartas */
+  justify-items: center;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px; /* Limita el ancho para mantener consistencia */
+  margin: 0 auto; /* Centra las cartas */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Efecto de elevación al pasar el ratón */
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada en hover */
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 3px solid #ff5c00; /* Borde decorativo para destacar la imagen */
+}
+
+.card-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-content h3 {
+  font-size: 1.6rem;
+  color: #ff5c00;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.card-content p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Ejemplo Práctico */
+.ejemplo-practico {
+  padding: 60px 0;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.ejemplo-practico h2 {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.ejemplo-practico .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Cambiar a columna para pantalla completa */
+  gap: 30px;
+}
+
+.ejemplo-practico img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.ejemplo-practico .text-content {
+  max-width: 800px;
+  text-align: left;
+}
+
+.ejemplo-practico .text-content h3 {
+  color: #ff5c00;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.ejemplo-practico .text-content p {
+  margin-bottom: 15px;
+  color: #333;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Footer */
+footer {
+  background-color: #ffffff;
+  padding: 40px 0;
+  text-align: center;
+  color: #333;
+  border-top: 1px solid #e5e5e5;
+}
+
+footer p {
+  font-size: 1rem;
+  margin: 0;
+  color: #333;
+}
+
+footer a {
+  color: #ff5c00;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #24c56c;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .ejemplo-practico .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero {
+    height: 60vh;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
